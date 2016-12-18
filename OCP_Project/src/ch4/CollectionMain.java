@@ -31,7 +31,7 @@ public class CollectionMain {
 	private static void treeMap() {
 
 		Map<Integer, Integer> treeMap = new TreeMap<>();
-		// treeMap.put(null, null);
+		// treeMap.put(null, null); <--- can't use NULL in a Tree structure
 
 		Set<Car> set = new TreeSet<>();
 		set.add(new Car()); // Comparable not implemented in Car()
