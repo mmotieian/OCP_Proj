@@ -22,23 +22,20 @@ public class CollectionMain {
 		// arrayList();
 		// arrayQueue();
 		// linkedList();
-//		set();
+		// set();
 		// linkedHashSet();
 		treeMap();
-		
+
 	}
 
 	private static void treeMap() {
 
-		Map<Integer,Integer> treeMap = new TreeMap<>();
-//		treeMap.put(null, null);
-		
+		Map<Integer, Integer> treeMap = new TreeMap<>();
+		// treeMap.put(null, null);
+
 		Set<Car> set = new TreeSet<>();
-		set.add(new Car());			// Comparable not implemented in Car()
-		
-		
-		
-		
+		set.add(new Car()); // Comparable not implemented in Car()
+
 	}
 
 	private static void linkedHashSet() {
