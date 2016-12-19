@@ -6,6 +6,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+import ch7.Car;
+
 public class MapMain {
 
 	public static void main(String[] args) {
@@ -42,6 +44,14 @@ public class MapMain {
 //		for(Set<Integer, String> obj : map3.entrySet())
 //			System.out.println(obj);
 //		
+		System.out.println("\n----------------------");
+		Map<Car, Integer> treeMap = new TreeMap<>();
+		treeMap.put(new Car("b"), 1);
+		treeMap.put(new Car("a"), 2);
+		
+		for( Car c : treeMap.keySet())
+			System.out.println(treeMap.get(c));
+		
 		
 
 	}
