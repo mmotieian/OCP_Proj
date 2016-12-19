@@ -3,6 +3,7 @@ package ch4;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -24,7 +25,26 @@ public class CollectionMain {
 		// linkedList();
 		// set();
 		// linkedHashSet();
-		treeMap();
+		// treeMap();
+		hashMap();
+
+	}
+
+	private static void hashMap() {
+		Map<Integer, String> hashMap = new HashMap<>();
+		hashMap.put(2, "A");
+		hashMap.put(1, "B");
+
+		for (String s : hashMap.values()) {
+			System.out.println(s);
+		}
+
+		for (Integer i : hashMap.keySet())
+			System.out.println(i + " " + hashMap.get(i));
+
+		for (Map.Entry m : hashMap.entrySet()) {
+			System.out.println(m);
+		}
 
 	}
 
