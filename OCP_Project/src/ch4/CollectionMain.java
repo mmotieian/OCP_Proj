@@ -3,6 +3,7 @@ package ch4;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
@@ -29,7 +30,23 @@ public class CollectionMain {
 		// linkedHashSet();
 		// treeMap();
 		// hashMap();
-		arraySort();
+		// arraySort();
+		listSort();
+
+	}
+
+	private static void listSort() {
+
+		List<Integer> intList = new ArrayList<>();
+		intList.add(4);
+		intList.add(3);
+		intList.add(7);
+		intList.add(1);
+		intList.add(6);
+
+		Collections.sort(intList);
+		System.out.println(intList);
+		System.out.println(Collections.binarySearch(intList, 8));
 
 	}
 
