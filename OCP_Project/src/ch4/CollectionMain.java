@@ -42,7 +42,7 @@ public class CollectionMain {
 		for (Integer i : hashMap.keySet())
 			System.out.println(i + " " + hashMap.get(i));
 
-		for (Map.Entry m : hashMap.entrySet()) {
+		for (Map.Entry<Integer, String> m : hashMap.entrySet()) {
 			System.out.println(m);
 		}
 
