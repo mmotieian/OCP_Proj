@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author Mohammad Najar
  *
  */
-public class Car implements Serializable {
+public class Car implements Serializable, Comparable<Car> {
 
 	/**
 	 * 
@@ -53,5 +53,21 @@ public class Car implements Serializable {
 		// TODO Auto-generated method stub
 		return this.str;
 	}
+
+
+	@Override
+	public int compareTo(Car o) {
+		// TODO Auto-generated method stub
+		return this.str.compareTo(o.str);
+	}
+
+	@Override
+	public boolean equals(Object car) {
+		// TODO Auto-generated method stub
+		if (car instanceof Car)
+			return this.str.equals(((Car) car).getStr());
+		return false;
+	}
+
 
 }
