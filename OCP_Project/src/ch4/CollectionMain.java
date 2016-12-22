@@ -23,7 +23,7 @@ public class CollectionMain {
 
 	public static void main(String[] args) {
 
-		// arrayList();
+		arrayList();
 		// arrayQueue();
 		// linkedList();
 		// set();
@@ -165,6 +165,22 @@ public class CollectionMain {
 	}
 
 	private static void arrayList() {
+		List l = new ArrayList<>();
+		l.add("");
+		// String sa = l.get(0); //<-- compile error
+
+		List l2 = new ArrayList<String>();
+		l2.add("");
+		// String s = l2.get(0); //<-- compile error
+
+		List l3 = new ArrayList();
+		l3.add("");
+		// s = l3.get(0); // <-- compile error
+
+		List<String> l4 = new ArrayList(); // <-- GOOD
+		l4.add("");
+		String aa = l4.get(0);
+
 		List<Integer> list = new ArrayList<>();
 		list.add(1);
 

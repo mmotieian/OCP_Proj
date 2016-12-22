@@ -54,7 +54,6 @@ public class Car implements Serializable, Comparable<Car> {
 		return this.str;
 	}
 
-
 	@Override
 	public int compareTo(Car o) {
 		// TODO Auto-generated method stub
@@ -68,6 +67,5 @@ public class Car implements Serializable, Comparable<Car> {
 			return this.str.equals(((Car) car).getStr());
 		return false;
 	}
-
 
 }
