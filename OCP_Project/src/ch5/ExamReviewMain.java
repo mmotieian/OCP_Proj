@@ -21,17 +21,16 @@ public class ExamReviewMain {
 		String list = "6386 HE--6380";
 		list.replaceAll("6", "8");
 		for (String str : list.split("-"))
-			System.out.println(str.indexOf('8'));
-		
-		
+			System.out.print(str.indexOf('8') + " ");
+		System.out.println("\n----------------------");
+
 		list = "mohamma Mo7hammad mohammadi sarahal momomo momomomo momomomHH";
 		String regex = "([Mm]\\w{6}).*\\1";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(list);
-		while(matcher.find())
+		while (matcher.find())
 			System.out.println(matcher.group());
-		
-		
+
 	}
 
 }

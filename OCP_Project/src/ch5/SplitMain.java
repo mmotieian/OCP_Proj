@@ -1,7 +1,5 @@
 package ch5;
 
-import java.util.Arrays;
-
 public class SplitMain {
 
 	public static void main(String[] args) {
@@ -12,39 +10,58 @@ public class SplitMain {
 		String strp[];
 
 		strp = str.split(":", 1);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
-		strp = str.split(":", 3);
-		System.out.println(Arrays.asList(strp));
+		strp = str.split(":", 2);
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split(":", 5);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split(":", -1);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split(":", 0);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
-		/*--------------------------------*/
 		System.out.println("--------------------------------");
 
 		strp = str.split("o", 1);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split("o", 3);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split("o", 6);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split("o", -1);
-		System.out.println(Arrays.asList(strp));
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
 		strp = str.split("o", 0);
-		System.out.println(Arrays.asList(strp));
-		
-		System.out.println(str.replace("foo", "BOO"));
-	}
+		for (String s : strp)
+			System.out.printf("%s-", s);
+		System.out.println();
 
+		System.out.println(str.replace("foo", new StringBuilder("BOO")));
+		System.out.println(str.replaceAll("\\w*oo", "SOS"));
+	}
 }
