@@ -10,11 +10,11 @@ public class MainClass {
 
 		// runPattern();
 		// findSquareBraket();
-		// replaceAll();
+		 replaceAll();
 		// beginAndEnd();
 		// matchStar();
 		// matchPlus();
-		stringSplit();
+//		stringSplit();
 
 	}
 
