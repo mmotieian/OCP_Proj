@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ScannerMain {
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -14,10 +15,10 @@ public class ScannerMain {
 	private static void findInLineMethod() {
 		Scanner scanner = new Scanner("AB 12.33");
 
-//		scanner.findInLine("\\d+");
+		// scanner.findInLine("\\d+");
 		while (scanner.hasNext())
-			System.out.println(scanner.next());
-		// System.out.println(scanner.nextDouble());
+			// System.out.println(scanner.next());
+			System.out.println(scanner.nextDouble());
 		// System.out.println(scanner.nextDouble());
 
 	}
