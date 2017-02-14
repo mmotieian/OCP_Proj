@@ -3,7 +3,6 @@ package ch6;
 public class AssertionMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		double[] grades = { 3.8, 1.2, 2.0, 1, 4 };
 		for (double grade : grades) {
