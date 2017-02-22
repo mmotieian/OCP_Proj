@@ -15,21 +15,27 @@ public class Car implements Serializable, Comparable<Car> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String str;
+	private String owner;
 	private Car instance;
 	private Engine engine;
 
 	public Car() {
-		str = "he";
-		this.instance = null;
+		super();
 	}
 
-	public Car(String str) {
-		this.str = str;
+	public Car(String owner) {
+		super();
+		this.owner = owner;
+	}
+
+	public Car(String str, Car instance, Engine engine) {
+		this.owner = str;
+		this.instance = instance;
+		this.engine = engine;
 	}
 
 	public String getStr() {
-		return str;
+		return owner;
 	}
 
 	public Car getInstance() {
@@ -50,21 +56,20 @@ public class Car implements Serializable, Comparable<Car> {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return this.str;
+		return "Car [str=" + owner + ", instance=" + instance + ", engine=" + engine + "]";
 	}
 
 	@Override
 	public int compareTo(Car o) {
 		// TODO Auto-generated method stub
-		return this.str.compareTo(o.str);
+		return this.owner.compareTo(o.owner);
 	}
 
 	@Override
 	public boolean equals(Object car) {
 		// TODO Auto-generated method stub
 		if (car instanceof Car)
-			return this.str.equals(((Car) car).getStr());
+			return this.owner.equals(((Car) car).getStr());
 		return false;
 	}
 

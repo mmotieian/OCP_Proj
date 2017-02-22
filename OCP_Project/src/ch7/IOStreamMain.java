@@ -1,13 +1,12 @@
 package ch7;
 
 import java.io.BufferedInputStream;
-import java.io.ObjectOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +15,10 @@ public class IOStreamMain {
 	public static void main(String[] args) {
 
 		// fileOutputStream("test.txt");
-		// fileInputStream("test.txt");
-		// bufferedInputStream("test.txt");
+		 fileInputStream("OCAJavaSE7ProgrammerICertificationGuide.pdf");
+		bufferedInputStream("OCAJavaSE7ProgrammerICertificationGuide.pdf");
 		// objectOutputStream("data.dat");
-		objectInputStream("data.dat");
+		// objectInputStream("data.dat");
 	}
 
 	private static void objectInputStream(String fileName) {
@@ -27,8 +26,8 @@ public class IOStreamMain {
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(fileName)))) {
 
 			ArrayList<String> list = (ArrayList<String>) ois.readObject();
-			
-			for(String str : list)
+
+			for (String str : list)
 				System.out.print(str);
 
 		} catch (IOException | ClassNotFoundException e) {
@@ -59,11 +58,17 @@ public class IOStreamMain {
 
 		try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(new File(fileName)))) {
 
-			byte[] b = new byte[1];
+			byte[] b = new byte[32];
+
+			long start = System.currentTimeMillis();
 			while (bis.read(b) != -1) {
 
-				System.out.print(new String(b));
+				// System.out.print(new String(b));
 			}
+
+			long end = System.currentTimeMillis();
+
+			System.out.println("BufferedInputStream: " + (end - start));
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -73,13 +78,21 @@ public class IOStreamMain {
 	private static void fileInputStream(String fileName) {
 
 		// Integer data = new Integer(0);
-		byte[] data = new byte[1];
+		byte[] data = new byte[32];
+
+		long start = System.currentTimeMillis();
+		// int ch = 0;
 		try (FileInputStream fis = new FileInputStream(new File(fileName));) {
 
 			while (fis.read(data) != -1) {
 
-				System.out.print(new String(data));
+				// System.out.print(Character.toChars(ch));
+				// System.out.print(new String(data));
 			}
+
+			long end = System.currentTimeMillis();
+
+			System.out.println("FileInputStream: " + (end - start));
 
 		} catch (IOException e) {
 

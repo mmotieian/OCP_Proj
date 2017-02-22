@@ -12,30 +12,35 @@ public class FileIOMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Car s1 = new Car();
-		Car s2 = new Car();
+		Car car1 = new Car();
+		Car car2 = new Car("car2", new Car(),new Engine(2));  // -->  java.io.NotSerializableException
 		
-		File file = new File("test.txt");
-		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))){
-			
-			oos.writeObject(s1);
-			oos.writeObject(s2);
-		
-		} catch (IOException e) {			
-			e.printStackTrace();
-		} 
+		File file = new File("carTest.txt");
+		processObjectOutputStream(car1, car2, file); 
 		
 		processObjectFile(file);
 		
 		
+	}
+
+	private static void processObjectOutputStream(Car car1, Car car2, File file) {
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))){
+			
+			oos.writeObject(car1);
+			oos.writeObject(car2);
+		
+		} catch (IOException e) {			
+			e.printStackTrace();
+			
+		}
 	}
 	
 	public static void processObjectFile(File file){
 		
 		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))){
 			
-			System.out.println(((Car)ois.readObject()).getStr());
-			System.out.println(((Car)ois.readObject()).getInstance());
+			System.out.println((Car)ois.readObject());	// car 1
+			System.out.println((Car)ois.readObject());	// car 2
 			
 			
 		} catch (IOException | ClassNotFoundException e) {
