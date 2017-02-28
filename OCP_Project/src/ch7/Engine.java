@@ -1,6 +1,8 @@
 package ch7;
 
-public class Engine {
+import java.io.Serializable;
+
+public class Engine implements Serializable{
 
 	private int engineSize;
 

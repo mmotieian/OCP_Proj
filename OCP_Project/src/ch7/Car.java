@@ -17,7 +17,7 @@ public class Car implements Serializable, Comparable<Car> {
 	private static final long serialVersionUID = 1L;
 	private String owner;
 	private Car instance;
-	private Engine engine;
+	private static Engine engine;
 
 	public Car() {
 		super();

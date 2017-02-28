@@ -1,5 +1,4 @@
 package ch7;
-
 import java.io.Console;
 
 public class ConsoleMain {
@@ -10,8 +9,17 @@ public class ConsoleMain {
 		Console console = System.console();
 		String str = "";
 		
-		System.out.println(console.readLine(str, args));
-		// System.out.println(console);
+		if(console == null){
+			System.out.println("Exiting now");
+			return;
+		}
+		
+		String name = console.readLine("Enter your name: ");
+		console.printf("\nHello %s %n", name);
+		
+		char[] pwd = console.readPassword("Please enter a password: ");
+		console.printf("Your password was %s: ", new String(pwd));
+		console.format("Your password was %s: ", new String(pwd));
 
 	}
 
