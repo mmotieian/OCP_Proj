@@ -1,0 +1,7 @@
+a String Partcharhtruea12.4541.8739865java.io.PrintWriter@557e5cbd10true
+a
+12.45
+41.87
+39865
+java.io.PrintWriter@557e5cbd
+10
