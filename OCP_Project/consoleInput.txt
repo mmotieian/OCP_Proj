@@ -1,0 +1,1 @@
+This is a second try to write the console's input to the file. -mohammad najar

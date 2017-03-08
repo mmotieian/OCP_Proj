@@ -84,7 +84,7 @@ public class NewFlashCard implements ActionListener {
 
 			pw.println(tfNote.getText());
 			pw.flush();
-
+			
 		} catch (IOException ex) {
 			// TODO: handle exception
 			JOptionPane.showMessageDialog(f, ex.toString());
