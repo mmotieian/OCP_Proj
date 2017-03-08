@@ -4,8 +4,12 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -64,17 +68,31 @@ public class NewFlashCard implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// Code to execute when Save button is activated
 
-		String baseDir = "C:\\Users\\MohammadM\\Documents\\GitHub\\OCP_Proj\\OCP_Project\\";
+		// get current directory
+		String baseDir = Paths.get("").toAbsolutePath().toString();
 		String subDir = tfMainObj.getText();
 		String fileName = tfSubObj.getText() + ".txt";
 
-		Path path = Paths.get(baseDir, subDir, fileName);
+		Path filePath = Paths.get(baseDir, subDir, fileName);
 
-		if (path.toFile().exists()) {
-			System.out.println("Saving " + path.toString() + " size: " + path.toFile().length());
+		try (PrintWriter pw = new PrintWriter(new FileWriter(filePath.toFile(), true));) {
+
+			if (Files.notExists(filePath.getParent()))
+				Files.createDirectories(filePath.getParent());
+			if (!Files.exists(Files.createFile(filePath)))
+				Files.createFile(filePath);
+
+			pw.println(tfNote.getText());
+			pw.flush();
+
+		} catch (IOException ex) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(f, ex.toString());
 		}
 
-		JOptionPane.showMessageDialog(f, path.toString());
+		if (filePath.toFile().exists()) {
+			System.out.println("Saving " + filePath.toString() + " size: " + filePath.toFile().length());
+		}
 
 	}
 
