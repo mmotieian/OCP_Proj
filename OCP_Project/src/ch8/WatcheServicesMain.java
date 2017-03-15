@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
-import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchEvent.Kind;
