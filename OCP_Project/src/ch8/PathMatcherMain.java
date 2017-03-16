@@ -1,26 +1,39 @@
 package ch8;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 
-public class PathMatcherMain {
+public class PathMatcherMain extends SimpleFileVisitor<Path> {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		Path path = Paths.get("test.txt");
-		PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:*.txt");
+		Path path = Paths.get("").toAbsolutePath();
 
-		System.out.println(path.toRealPath(LinkOption.NOFOLLOW_LINKS));
+		PathMatcherMain pathMatcherMain = new PathMatcherMain();
+		Files.walkFileTree(path, pathMatcherMain);
 
-		while (matcher.matches(path)){
-			System.out.println(path);
+	}
+
+	@Override
+	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+		// TODO Auto-generated method stub
+		PathMatcher matcher = FileSystems.getDefault().getPathMatcher("regex:.*.java");
+		if (matcher.matches(file)) {
+			System.out.println(file);
 		}
 
+		return super.visitFile(file, attrs);
 	}
 
 }
