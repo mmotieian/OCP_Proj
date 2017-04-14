@@ -27,11 +27,11 @@ public class Employee extends Thread {
 	public static void main(String args[]) throws InterruptedException {
 		Bus bus = new Bus();
 		Employee e1 = new Employee("Paul", bus);
-		// Employee e2 = new Employee("Shreya", bus);
+		 Employee e2 = new Employee("Shreya", bus);
 
 		e1.start();
 //		Thread.sleep(1000);
 		e1.interrupt();
-		// e2.start();
+		 e2.start();
 	}
 }
