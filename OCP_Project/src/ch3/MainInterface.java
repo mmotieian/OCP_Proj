@@ -1,7 +1,8 @@
 package ch3;
 
 public interface MainInterface {
-
+	String timbreType = "Lindeman-Sobel";
+	
 	interface InnerInterface extends MainInterface {
 		void innerDoSomething();
 	}

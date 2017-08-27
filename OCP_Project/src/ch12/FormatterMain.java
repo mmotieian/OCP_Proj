@@ -34,7 +34,8 @@ public class FormatterMain {
 		Format number = NumberFormat.getNumberInstance(Locale.FRENCH);
 		Format integer = NumberFormat.getIntegerInstance();
 		Format date = DateFormat.getDateInstance(DateFormat.FULL);
-		Format time = DateFormat.getTimeInstance(DateFormat.FULL);
+		Format time = DateFormat.getTimeInstance(DateFormat.MEDIUM);
+		Format timeMedium = DateFormat.getTimeInstance(DateFormat.MEDIUM);
 		Format dateTime = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.SHORT);
 		Format simpleFormat = new SimpleDateFormat("MM/dd/yyyy-HH:mm:ss");
 		Calendar cal = Calendar.getInstance();
@@ -52,6 +53,7 @@ public class FormatterMain {
 		System.out.println(str = date.format(new Date()));
 //		System.out.println(date.parseObject(str));
 		System.out.println(time.format(new Time(System.currentTimeMillis())));
+		System.out.println(timeMedium.format(new Time(System.currentTimeMillis())));
 		System.out.println(dateTime.format(new Date()));
 		
 		str = simpleFormat.format(new Date());
