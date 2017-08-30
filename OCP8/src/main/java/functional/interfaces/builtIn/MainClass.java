@@ -3,16 +3,26 @@ package functional.interfaces.builtIn;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-//		testPredicate();
-//		testConsumer();
-		testFunction();
+		// testPredicate();
+		// testConsumer();
+		// testFunction();
+		testSupplier();
 
+	}
+
+	private static void testSupplier() {
+		// TODO Auto-generated method stub
+		Supplier<String> supplier = () -> {
+			return "HELLO WORLD";
+		};
+		System.out.println(supplier.get());
 	}
 
 	private static void testConsumer() {
@@ -30,7 +40,7 @@ public class MainClass {
 				return 0;
 			}
 		};
-		
+
 		System.out.println("function.apply " + function.apply("3"));
 	}
 
